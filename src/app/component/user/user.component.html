@@ -1,1 +1,28 @@
-<p>user works!</p>
+
+
+
+ <div class="container">
+    <div class="row">
+        <div class="col-12">
+            <button 
+             routerLink="/user/adduser"
+            class="btn btn-sm btn-primary" type="submit">Add User</button>
+        </div>
+    </div>
+ </div>
+
+<div class="container">
+    <div class="row mt-5">
+    <div class="col-6">
+        <ul class="list-group" >
+            <li class="list-group-item" *ngFor="let user of userArray"
+             [routerLink]="[user.userId]"
+            >
+                {{user.userName}}
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+
+

@@ -1,0 +1,51 @@
+
+
+
+ <div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-2">
+            <div class="card" *ngIf="userInfo && userId; else nouserDeatils">
+                <div class="card-body">
+
+                    <div class="row">
+                        <div class="col-md-9">
+                        <h4>
+                            {{userInfo.userName}}
+                        </h4>
+                        <p>
+                            <strong>{{userInfo.userRole}}</strong>
+                        </p>
+                        <p>
+                            {{userInfo.userdescription}}
+                        </p>
+
+                        </div>
+                        <div class="col-md-3 img">
+                          <img src="{{userInfo.userimg}}" alt="{{userInfo.userName}}" title="{{userInfo.userName}}">
+                    
+                        </div>
+                    </div>
+
+                    <div>
+                        <button 
+                        routerLink="edit"
+                        class="btn btn-sm btn-primary mr-3">Edit</button>
+                         <button class="btn btn-sm btn-danger"
+                          (click)="onRemove()"
+                         >Remove</button>
+                    </div>
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+
+ <ng-template #nouserDeatils>
+    <p>
+        No user Details here!!!
+    </p>
+ </ng-template>
+
+ 

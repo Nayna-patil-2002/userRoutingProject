@@ -1,0 +1,41 @@
+ <app-back-btn></app-back-btn>
+
+<h4>
+    {{isInEdit?'updateUser':'adduser'}}
+</h4>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <form [formGroup]="userForm" (ngSubmit)="onuserAdd()">
+                    <div class="form-group">
+                        <label for="userName">User Name</label>
+                        <input type="text" id="userName" class="form-control" formControlName="userName">
+                    </div>
+                    <div class="form-group">
+                        <label for="userRole">User Role</label>
+                        <select  id="userRole" class="form-control" formControlName="userRole"> 
+                            <option value="Candidate">Candidate</option>
+                            <option value="Admin">Admin</option>
+                        </select>
+                    </div>
+                     <div class="form-group">
+                        <label for="userdescription">User Description</label>
+                        <textarea id="userdescription" class="form-control" formControlName="userdescription" type="text"> </textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="userimg">User Image</label>
+                        <textarea id="userimg" class="form-control" formControlName="userimg" type="text"> </textarea>
+                    </div>
+                 
+                    <button class="btn btn-sm btn-primary" type="submit"
+                     *ngIf="!isInEdit"
+                    >Add User</button>
+                    <button 
+                    (click)="onUpdate()"
+                    *ngIf="isInEdit"
+                    class="btn btn-sm btn-primary" type="Button">Update User</button>
+           </form>
+        </div>
+    </div>
+</div>

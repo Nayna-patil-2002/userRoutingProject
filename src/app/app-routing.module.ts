@@ -4,6 +4,8 @@ import { HomeComponent } from './component/home/home.component';
 import { FairsComponent } from './component/fairs/fairs.component';
 import { ProductComponent } from './component/product/product.component';
 import { UserComponent } from './component/user/user.component';
+import { UserFormComponent } from './component/user/user-form/user-form.component';
+import { UserDtailsComponent } from './component/user/user-dtails/user-dtails.component';
 
 const routes: Routes = [
     {
@@ -18,6 +20,18 @@ const routes: Routes = [
     {
     path:"user",
     component:UserComponent
+   },
+   {
+    path:"user/adduser",
+    component:UserFormComponent
+   },
+    {
+    path:"user/:userId",
+    component:UserDtailsComponent
+   },
+   {
+    path:"user/:userId/edit",
+    component:UserFormComponent
    },
     {
     path:"product",
